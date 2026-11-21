@@ -1,187 +1,150 @@
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Mostafa Reiad - Photographer, Videographer and Visual Storyteller since 2019.">
-<title>Mostafa Reiad | Visual Storyteller</title>
+<meta property="og:title" content="Mostafa Reiad | Photographer & Videographer">
+<meta property="og:description" content="I capture moments, create stories, and turn ideas into visual experiences.">
+<meta property="og:image" content="images/me.jpg">
+<title>Mostafa Reiad | Photographer & Videographer</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Cairo:wght@400;500;600;700;900&display=swap" rel="stylesheet">
 
 <style>
-:root {
+:root{
   --cream:#f6f1e7;
   --paper:#fffdf8;
   --burgundy:#651e32;
   --gold:#a98a51;
+  --gold-light:#e0c88f;
+  --dark:#120a06;
   --ink:#30251f;
   --muted:#817568;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{
-  background:var(--cream);
-  color:var(--ink);
-  font-family:Inter,sans-serif;
-}
-body[dir="rtl"]{font-family:Cairo,sans-serif}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{background:var(--cream);color:var(--ink);font-family:Inter,sans-serif}
+html[dir="rtl"] body{font-family:Cairo,sans-serif}
+html[dir="rtl"] h1,html[dir="rtl"] h2,html[dir="rtl"] .logo,html[dir="rtl"] .cat-title{font-family:Cairo,sans-serif}
+html[dir="rtl"] .eyebrow,html[dir="rtl"] .navlinks a,html[dir="rtl"] .btn,html[dir="rtl"] .cta,html[dir="rtl"] .logo,html[dir="rtl"] .role,html[dir="rtl"] .lang{letter-spacing:0}
 a{color:inherit;text-decoration:none}
 button{font:inherit;cursor:pointer}
-nav{
-  height:85px;padding:0 7%;
-  display:flex;align-items:center;
-  justify-content:space-between;
-  border-bottom:1px solid #a98a5133;
-  background:var(--cream);
-}
-.logo{
-  color:var(--burgundy);
-  font-family:"Cormorant Garamond",serif;
-  font-size:27px;font-weight:700;letter-spacing:2px;
-}
+a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:50;height:85px;padding:0 7%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #a98a5133;background:var(--cream)}
+.logo{color:var(--burgundy);font-family:"Cormorant Garamond",serif;font-size:27px;font-weight:700;letter-spacing:2px}
 .navlinks{display:flex;gap:30px;align-items:center}
 .navlinks a{font-size:12px;letter-spacing:1px}
 .navlinks a:hover{color:var(--gold)}
-.lang{
-  border:1px solid var(--gold);
-  background:transparent;color:var(--burgundy);
-  padding:9px 15px;font-size:11px;
-}
-.hero{
-  padding:55px 7% 75px;
-  text-align:center;
-}
-.eyebrow{
-  color:var(--gold);font-size:11px;
-  letter-spacing:4px;text-transform:uppercase;
-}
-.hero h1{
-  font-family:"Cormorant Garamond",serif;
-  color:var(--burgundy);
-  font-size:clamp(55px,10vw,112px);
-  font-weight:500;line-height:1.05;
-  margin:20px 0;
-}
-.hero p{
-  max-width:610px;margin:0 auto;
-  color:var(--muted);font-size:14px;
-  line-height:2;
-}
-.arch{
-  max-width:950px;height:480px;
-  margin:45px auto 30px;
-  border:1px solid var(--gold);
-  border-radius:48% 48% 5px 5px / 35% 35% 5px 5px;
-  overflow:hidden;position:relative;
-  background:
-    linear-gradient(0deg,#25130b88,#25130b11),
-    url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1800&q=85") center 55%/cover;
-}
-.arch:after{
-  content:"";position:absolute;inset:12px;
-  border:1px solid #d0b779aa;
-  border-radius:48% 48% 3px 3px / 35% 35% 3px 3px;
-}
-.hero-actions{
-  display:flex;justify-content:center;gap:14px;
-  margin-top:30px;flex-wrap:wrap;
-}
-.btn{
-  padding:15px 27px;
-  background:var(--burgundy);color:white;
-  font-size:11px;letter-spacing:1px;
-  border:1px solid var(--burgundy);
-}
-.btn-outline{
-  background:transparent;color:var(--burgundy);
-}
+.lang{border:1px solid var(--gold);background:transparent;color:var(--burgundy);padding:9px 15px;font-size:11px}
+
+/* HERO */
+.hero{position:relative;min-height:calc(100vh - 85px);min-height:calc(100svh - 85px);overflow:hidden;direction:ltr;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);align-items:end;background:var(--dark);color:#fff6ee}
+.collage{position:absolute;inset:0;display:grid;gap:6px;padding:6px;grid-template-columns:1.1fr 1fr 1fr 1fr;grid-template-rows:1fr 1fr;transform:rotate(-3deg) scale(1.15)}
+.tile{overflow:hidden;border-radius:10px;animation:in .9s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i)*70ms)}
+.tile img{width:100%;height:100%;object-fit:cover;display:block}
+.t-rings{grid-row:span 2}
+@keyframes in{from{opacity:0;transform:scale(1.08)}to{opacity:1;transform:none}}
+.shade{position:absolute;inset:0;background:radial-gradient(70% 80% at 25% 100%,rgba(255,90,31,.32),transparent 70%),linear-gradient(270deg,rgba(18,10,6,.93) 0%,rgba(18,10,6,.78) 45%,rgba(18,10,6,.55) 100%)}
+.me{position:relative;z-index:2;align-self:end;justify-self:center;width:min(100%,520px);padding-inline:clamp(12px,3vw,40px)}
+.me img{display:block;width:100%;aspect-ratio:1/1.12;object-fit:cover;object-position:50% 20%;border-radius:999px 999px 0 0;box-shadow:0 0 0 6px rgba(224,200,143,.4),0 30px 80px rgba(0,0,0,.6)}
+.copy{position:relative;z-index:2;direction:ltr;padding:clamp(24px,6vw,90px) clamp(20px,5vw,80px);align-self:center}
+html[dir="rtl"] .copy{direction:rtl}
+.copy h1{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:clamp(3rem,7vw,6.2rem);line-height:.98;max-width:9ch;text-wrap:balance;letter-spacing:1px}
+html[dir="rtl"] .copy h1{font-weight:900;line-height:1.15}
+.role{margin-top:1.1rem;font-weight:600;letter-spacing:.2em;color:var(--gold-light);font-size:clamp(.78rem,1.3vw,1rem)}
+.copy p{margin-top:1.2rem;font-size:clamp(1rem,1.4vw,1.15rem);line-height:1.9;color:#e9cdb8;max-width:42ch}
+.copy p+p{margin-top:.8rem}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:2rem}
+.cta{display:inline-block;background:var(--cream);color:var(--burgundy);font-weight:600;font-size:12px;letter-spacing:1px;padding:16px 28px;border:1px solid var(--cream);transition:transform .2s,background .2s}
+.cta:hover{transform:translateY(-3px);background:#fff}
+.cta.ghost{background:transparent;color:var(--cream);border-color:#f6f1e7aa}
+.cta.ghost:hover{background:#f6f1e71a}
+
+/* SECTIONS */
+.eyebrow{color:var(--gold);font-size:11px;letter-spacing:4px;text-transform:uppercase}
 .section{padding:90px 7%}
 .section-head{text-align:center;margin-bottom:45px}
-.section-head h2{
-  font-family:"Cormorant Garamond",serif;
-  color:var(--burgundy);font-size:48px;font-weight:500;
-  margin:12px 0;
-}
+.section-head h2{font-family:"Cormorant Garamond",serif;color:var(--burgundy);font-size:48px;font-weight:500;margin:12px 0}
 .section-head p{color:var(--muted);font-size:13px}
-.categories{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  gap:20px;
-}
-.category{
-  position:relative;min-height:290px;
-  overflow:hidden;background:#ddd;
-  border:1px solid #a98a5155;
-}
-.category img{
-  width:100%;height:290px;object-fit:cover;
-  display:block;transition:transform .6s;
-}
+#work .section-head .eyebrow,.contact>.eyebrow{display:block}
+.categories{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.category{position:relative;min-height:290px;overflow:hidden;background:#ddd;border:1px solid #a98a5155}
+.category img{width:100%;height:290px;object-fit:cover;display:block;transition:transform .6s}
 .category:hover img{transform:scale(1.06)}
-.category:after{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(0deg,#20110dd9,transparent 70%);
-}
-.cat-title{
-  position:absolute;bottom:23px;left:22px;z-index:2;
-  color:white;font-family:"Cormorant Garamond",serif;
-  font-size:29px;
-}
-.about{
-  background:var(--paper);
-  border-top:1px solid #a98a5133;
-  border-bottom:1px solid #a98a5133;
-}
-.about-inner{
-  max-width:850px;margin:auto;text-align:center;
-}
-.about-inner p{
-  line-height:2.2;color:var(--muted);
-  font-size:15px;margin-top:20px;
-}
-.skills{
-  display:flex;justify-content:center;gap:12px;
-  flex-wrap:wrap;margin-top:28px;
-}
-.skill{
-  border:1px solid #a98a5166;
-  padding:10px 17px;color:var(--burgundy);
-  font-size:11px;
-}
+.category:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#20110dd9,transparent 70%)}
+.cat-title{position:absolute;bottom:23px;inset-inline-start:22px;z-index:2;color:white;font-family:"Cormorant Garamond",serif;font-size:29px}
+.about{background:var(--paper);border-top:1px solid #a98a5133;border-bottom:1px solid #a98a5133}
+.about-inner{max-width:850px;margin:auto;text-align:center}
+.about-inner p{line-height:2.2;color:var(--muted);font-size:15px;margin-top:20px}
+.skills{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:28px}
+.skill{border:1px solid #a98a5166;padding:10px 17px;color:var(--burgundy);font-size:11px}
 .contact{text-align:center}
-.contact-info{
-  display:flex;justify-content:center;
-  gap:15px;flex-wrap:wrap;margin-top:30px;
-}
-.contact-info a{
-  border:1px solid #a98a5170;
-  padding:14px 20px;color:var(--burgundy);
-  font-size:12px;
-}
-footer{
-  background:var(--burgundy);color:var(--cream);
-  padding:35px 7%;text-align:center;
-}
+.contact-info{display:flex;justify-content:center;gap:15px;flex-wrap:wrap;margin-top:30px}
+.contact-info a{border:1px solid #a98a5170;padding:14px 20px;color:var(--burgundy);font-size:12px;transition:background .2s,color .2s}
+.contact-info a:hover{background:var(--burgundy);color:var(--cream)}
+footer{background:var(--burgundy);color:var(--cream);padding:35px 7%;text-align:center}
 footer p{font-size:11px;opacity:.8;line-height:2}
 footer .logo{color:#e5cc98;margin-bottom:12px}
+
+
+/* WORKS GALLERY PAGE */
+.category{display:block;width:100%;padding:0;text-align:start;color:inherit;font:inherit;cursor:pointer}
+[hidden]{display:none!important}
+.gpage{position:fixed;inset:0;z-index:100;background:var(--cream);overflow:auto}
+.gbar{position:sticky;top:0;z-index:5;height:70px;padding:0 7%;display:flex;align-items:center;justify-content:space-between;background:var(--cream);border-bottom:1px solid #a98a5133}
+.gbar .logo{background:none;border:0;cursor:pointer}
+.gbar-actions{display:flex;gap:12px;align-items:center}
+.back{border:1px solid var(--burgundy);background:var(--burgundy);color:var(--cream);padding:9px 16px;font-size:11px;letter-spacing:1px}
+html[dir="rtl"] .back{letter-spacing:0}
+.hero-mini{min-height:62vh}
+.hero-mini .copy h1{font-size:clamp(2.4rem,5.5vw,4.6rem);max-width:14ch}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;max-width:1200px;margin:0 auto}
+.gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border:1px solid #a98a5155}
+.gallery .video{aspect-ratio:16/9;border:1px solid #a98a5155;background:#000}
+.gallery iframe{width:100%;height:100%;border:0;display:block}
+.gallery-empty{grid-column:1/-1;text-align:center;color:var(--muted);font-size:14px;line-height:2;padding:30px 0}
+.gfoot{text-align:center;padding:10px 7% 70px}
+.gfoot .cta{background:var(--burgundy);color:var(--cream);border-color:var(--burgundy)}
+.gfoot .cta:hover{background:#7d2840}
+@media(max-width:700px){.gbar{height:60px;padding:0 5%}.gbar .logo{font-size:16px}.hero-mini{min-height:0}}
+
+/* MOBILE */
+@media(max-width:760px){
+  .hero{display:flex;flex-direction:column;align-items:flex-start;min-height:0}
+  .collage{grid-template-columns:1fr 1fr 1fr;grid-template-rows:repeat(3,1fr);transform:rotate(-3deg) scale(1.2)}
+  .shade{background:linear-gradient(180deg,rgba(18,10,6,.55),rgba(18,10,6,.92) 55%)}
+  .copy{order:1;padding:36px 22px 0}
+  .me{order:2;width:min(78%,340px);margin:28px 0 0 14px;align-self:flex-start}
+  html[dir="rtl"] .me{margin:28px 14px 0 0}
+}
 @media(max-width:700px){
   nav{padding:0 5%;height:70px}
+  html{scroll-padding-top:70px}
   .navlinks{gap:12px}
   .navlinks a{font-size:10px}
   .logo{font-size:21px}
-  .hero{padding:45px 5%}
-  .arch{height:330px}
-  .categories{grid-template-columns:1fr 1fr;gap:10px}
-  .category,.category img{min-height:210px;height:210px}
-  .cat-title{font-size:21px;left:12px;bottom:15px}
   .section{padding:65px 5%}
   .section-head h2{font-size:39px}
+  .categories{grid-template-columns:1fr 1fr;gap:10px}
+  .category,.category img{min-height:210px;height:210px}
+  .cat-title{font-size:21px;inset-inline-start:12px;bottom:15px}
 }
 @media(max-width:400px){
+  nav{gap:8px}
+  .logo{font-size:16px;letter-spacing:1px}
   .navlinks{gap:7px}
   .navlinks a{font-size:9px}
   .categories{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .tile{animation:none}
+  .cta,.category img,.contact-info a{transition:none}
 }
 </style>
 </head>
@@ -194,27 +157,31 @@ footer .logo{color:#e5cc98;margin-bottom:12px}
     <a href="#work" data-en="WORK" data-ar="أعمالي">WORK</a>
     <a href="#about" data-en="ABOUT" data-ar="عني">ABOUT</a>
     <a href="#contact" data-en="CONTACT" data-ar="تواصل">CONTACT</a>
-    <button class="lang" onclick="toggleLanguage()">عربي</button>
+    <button class="lang" type="button" onclick="toggleLanguage()" aria-label="Switch language">عربي</button>
   </div>
 </nav>
 
 <header class="hero">
-  <div class="eyebrow" data-en="PHOTOGRAPHER & VISUAL STORYTELLER" data-ar="مصور وصانع قصص بصرية">
-    PHOTOGRAPHER & VISUAL STORYTELLER
+  <div class="collage" aria-hidden="true">
+    <div class="tile t-rings" style="--i:0"><img src="images/rings.jpg" alt=""></div>
+    <div class="tile" style="--i:1"><img src="images/couple.jpg" alt=""></div>
+    <div class="tile" style="--i:2"><img src="images/pyr.jpg" alt=""></div>
+    <div class="tile" style="--i:3"><img src="images/food.jpg" alt=""></div>
+    <div class="tile" style="--i:4"><img src="images/kid.jpg" alt=""></div>
+    <div class="tile" style="--i:5"><img src="images/burger.jpg" alt=""></div>
+    <div class="tile" style="--i:6"><img src="images/bride.jpg" alt=""></div>
   </div>
-
-  <h1>Mostafa Reiad</h1>
-
-  <p data-en="I'm Mostafa Reiad. Since 2019, I've been capturing stories through photography and cinematic visuals, combining creativity, technical skills, and attention to detail to bring every frame to life."
-     data-ar="أنا مصطفى رياض. منذ عام 2019، وأنا أوثّق القصص من خلال التصوير الفوتوغرافي واللقطات السينمائية، وأجمع بين الإبداع والمهارات التقنية والاهتمام بالتفاصيل لإضفاء الحياة على كل لقطة.">
-    I'm Mostafa Reiad. Since 2019, I've been capturing stories through photography and cinematic visuals, combining creativity, technical skills, and attention to detail to bring every frame to life.
-  </p>
-
-  <div class="arch"></div>
-
-  <div class="hero-actions">
-    <a href="#work" class="btn" data-en="EXPLORE MY WORK" data-ar="اكتشف أعمالي">EXPLORE MY WORK</a>
-    <a href="#contact" class="btn btn-outline" data-en="GET IN TOUCH" data-ar="تواصل معي">GET IN TOUCH</a>
+  <div class="shade"></div>
+  <div class="me"><img src="images/me.jpg" alt="Mostafa Reiad"></div>
+  <div class="copy">
+    <h1 data-en="MOSTAFA REIAD" data-ar="مصطفى رياض">MOSTAFA REIAD</h1>
+    <div class="role" data-en="PHOTOGRAPHER & VIDEOGRAPHER" data-ar="مصور فوتوغرافي ومصور فيديو">PHOTOGRAPHER & VIDEOGRAPHER</div>
+    <p data-en="I capture moments, create stories, and turn ideas into visual experiences." data-ar="أوثّق اللحظات وأصنع القصص وأحوّل الأفكار إلى تجارب بصرية.">I capture moments, create stories, and turn ideas into visual experiences.</p>
+    <p data-en="From automotive and commercial productions to weddings, events, and portraits — every frame has a story to tell." data-ar="من الإنتاجات التجارية وتصوير السيارات إلى الأفراح والفعاليات والبورتريه، كل لقطة لها قصة.">From automotive and commercial productions to weddings, events, and portraits — every frame has a story to tell.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="cta" data-en="LET'S CREATE SOMETHING MEANINGFUL." data-ar="لنصنع شيئًا ذا معنى.">LET'S CREATE SOMETHING MEANINGFUL.</a>
+      <a href="#work" class="cta ghost" data-en="EXPLORE MY WORK" data-ar="اكتشف أعمالي">EXPLORE MY WORK</a>
+    </div>
   </div>
 </header>
 
@@ -226,30 +193,30 @@ footer .logo{color:#e5cc98;margin-bottom:12px}
   </div>
 
   <div class="categories">
-    <a class="category" href="#contact">
-      <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=900&q=80" alt="Automotive">
-      <span class="cat-title">Automotive</span>
-    </a>
-    <a class="category" href="#contact">
-      <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=900&q=80" alt="Car Care">
-      <span class="cat-title">PPF & Car Care</span>
-    </a>
-    <a class="category" href="#contact">
-      <img src="IMG_9512.jpg" alt="Weddings">
-      <span class="cat-title">Weddings</span>
-    </a>
-    <a class="category" href="#contact">
-      <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80" alt="Restaurants">
-      <span class="cat-title">Restaurants & Cafes</span>
-    </a>
-    <a class="category" href="#contact">
-      <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=900&q=80" alt="Retail">
-      <span class="cat-title">Commercial & Retail</span>
-    </a>
-    <a class="category" href="#contact">
-      <img src="https://images.unsplash.com/photo-1505236858219-8359eb29e329?auto=format&fit=crop&w=900&q=80" alt="Events">
-      <span class="cat-title">Events</span>
-    </a>
+    <button class="category" type="button" data-cat="automotive">
+      <img loading="lazy" src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=900&q=80" alt="Automotive">
+      <span class="cat-title" data-en="Automotive" data-ar="السيارات">Automotive</span>
+    </button>
+    <button class="category" type="button" data-cat="ppf">
+      <img loading="lazy" src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=900&q=80" alt="PPF and Car Care">
+      <span class="cat-title" data-en="PPF & Car Care" data-ar="حماية وعناية بالسيارات">PPF & Car Care</span>
+    </button>
+    <button class="category" type="button" data-cat="weddings">
+      <img loading="lazy" src="images/couple.jpg" alt="Weddings">
+      <span class="cat-title" data-en="Weddings" data-ar="الأفراح">Weddings</span>
+    </button>
+    <button class="category" type="button" data-cat="restaurants">
+      <img loading="lazy" src="images/food.jpg" alt="Restaurants and Cafes">
+      <span class="cat-title" data-en="Restaurants & Cafes" data-ar="المطاعم والكافيهات">Restaurants & Cafes</span>
+    </button>
+    <button class="category" type="button" data-cat="commercial">
+      <img loading="lazy" src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=900&q=80" alt="Commercial and Retail">
+      <span class="cat-title" data-en="Commercial & Retail" data-ar="التجاري والتجزئة">Commercial & Retail</span>
+    </button>
+    <button class="category" type="button" data-cat="events">
+      <img loading="lazy" src="images/bride.jpg" alt="Events">
+      <span class="cat-title" data-en="Events" data-ar="الفعاليات">Events</span>
+    </button>
   </div>
 </section>
 
@@ -259,57 +226,19 @@ footer .logo{color:#e5cc98;margin-bottom:12px}
     <div class="section-head">
       <h2 data-en="About Me" data-ar="من أنا">About Me</h2>
     </div>
-    <p data-en="My journey in photography began in 2019. I believe every frame has a story worth telling. Through photography, videography and editing, I focus on capturing details and creating meaningful visual experiences."
-       data-ar="بدأت رحلتي في التصوير عام 2019. أؤمن أن كل لقطة تحمل قصة تستحق أن تُروى. من خلال التصوير الفوتوغرافي وتصوير الفيديو والمونتاج، أركز على التفاصيل وصناعة تجارب بصرية لها معنى.">
-      My journey in photography began in 2019. I believe every frame has a story worth telling.
-    </p>
+    <p data-en="I'm Mostafa Reiad. Since 2019, I've been capturing stories through photography and cinematic visuals, combining creativity, technical skills, and attention to detail to bring every frame to life. I believe every frame has a story worth telling."
+       data-ar="أنا مصطفى رياض. منذ عام 2019، وأنا أوثّق القصص من خلال التصوير الفوتوغرافي واللقطات السينمائية، وأجمع بين الإبداع والمهارات التقنية والاهتمام بالتفاصيل لإضفاء الحياة على كل لقطة. أؤمن أن كل لقطة تحمل قصة تستحق أن تُروى.">I'm Mostafa Reiad. Since 2019, I've been capturing stories through photography and cinematic visuals, combining creativity, technical skills, and attention to detail to bring every frame to life. I believe every frame has a story worth telling.</p>
     <div class="skills">
-      <span class="skill">Photography</span>
-      <span class="skill">Videography</span>
-      <span class="skill">Video Editing</span>
-      <span class="skill">Visual Storytelling</span>
-      <span class="skill">Creative Direction</span>
+      <span class="skill" data-en="Photography" data-ar="التصوير الفوتوغرافي">Photography</span>
+      <span class="skill" data-en="Videography" data-ar="تصوير الفيديو">Videography</span>
+      <span class="skill" data-en="Video Editing" data-ar="المونتاج">Video Editing</span>
+      <span class="skill" data-en="Visual Storytelling" data-ar="السرد البصري">Visual Storytelling</span>
+      <span class="skill" data-en="Creative Direction" data-ar="الإخراج الإبداعي">Creative Direction</span>
     </div>
   </div>
 </section>
 
 <section class="section contact" id="contact">
-  <div class="eyebrow" data-en="LET'S CREATE SOMETHING" data-ar="لنصنع شيئاً مميزاً">LET'S CREATE SOMETHING</div>
+  <div class="eyebrow" data-en="LET'S CREATE SOMETHING" data-ar="لنصنع شيئًا مميزًا">LET'S CREATE SOMETHING</div>
   <div class="section-head">
     <h2 data-en="Get In Touch" data-ar="تواصل معي">Get In Touch</h2>
-    <p data-en="Have a project in mind? Let's talk." data-ar="لديك مشروع؟ يسعدني التواصل معك.">Have a project in mind? Let's talk.</p>
-  </div>
-  <div class="contact-info">
-    <a href="https://wa.me/201156828898">WhatsApp</a>
-    <a href="tel:+201156828898">Phone</a>
-    <a href="mailto:mostafaavva2001@gmail.com">Email</a>
-    <a href="https://www.instagram.com/mostafa.reiad.ph" target="_blank">Instagram</a>
-    <a href="https://www.facebook.com/share/1CCG7GXLhr/" target="_blank">Facebook</a>
-    <a href="https://www.tiktok.com/@mostafa.reiad" target="_blank">TikTok</a>
-  </div>
-</section>
-
-<footer>
-  <div class="logo">MOSTAFA REIAD</div>
-  <p>Photographer & Visual Storyteller</p>
-  <p>© 2026 Mostafa Reiad. All Rights Reserved.</p>
-</footer>
-
-<script>
-let currentLanguage = "en";
-
-function toggleLanguage(){
-  currentLanguage = currentLanguage === "en" ? "ar" : "en";
-  document.documentElement.lang = currentLanguage;
-  document.documentElement.dir = currentLanguage === "ar" ? "rtl" : "ltr";
-  document.querySelector(".lang").textContent =
-    currentLanguage === "ar" ? "English" : "عربي";
-
-  document.querySelectorAll("[data-en]").forEach(element => {
-    element.textContent = element.dataset[currentLanguage];
-  });
-}
-</script>
-
-</body>
-</html>
