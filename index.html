@@ -1,0 +1,315 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Mostafa Reiad - Photographer, Videographer and Visual Storyteller since 2019.">
+<title>Mostafa Reiad | Visual Storyteller</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --cream:#f6f1e7;
+  --paper:#fffdf8;
+  --burgundy:#651e32;
+  --gold:#a98a51;
+  --ink:#30251f;
+  --muted:#817568;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--cream);
+  color:var(--ink);
+  font-family:Inter,sans-serif;
+}
+body[dir="rtl"]{font-family:Cairo,sans-serif}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer}
+nav{
+  height:85px;padding:0 7%;
+  display:flex;align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid #a98a5133;
+  background:var(--cream);
+}
+.logo{
+  color:var(--burgundy);
+  font-family:"Cormorant Garamond",serif;
+  font-size:27px;font-weight:700;letter-spacing:2px;
+}
+.navlinks{display:flex;gap:30px;align-items:center}
+.navlinks a{font-size:12px;letter-spacing:1px}
+.navlinks a:hover{color:var(--gold)}
+.lang{
+  border:1px solid var(--gold);
+  background:transparent;color:var(--burgundy);
+  padding:9px 15px;font-size:11px;
+}
+.hero{
+  padding:55px 7% 75px;
+  text-align:center;
+}
+.eyebrow{
+  color:var(--gold);font-size:11px;
+  letter-spacing:4px;text-transform:uppercase;
+}
+.hero h1{
+  font-family:"Cormorant Garamond",serif;
+  color:var(--burgundy);
+  font-size:clamp(55px,10vw,112px);
+  font-weight:500;line-height:1.05;
+  margin:20px 0;
+}
+.hero p{
+  max-width:610px;margin:0 auto;
+  color:var(--muted);font-size:14px;
+  line-height:2;
+}
+.arch{
+  max-width:950px;height:480px;
+  margin:45px auto 30px;
+  border:1px solid var(--gold);
+  border-radius:48% 48% 5px 5px / 35% 35% 5px 5px;
+  overflow:hidden;position:relative;
+  background:
+    linear-gradient(0deg,#25130b88,#25130b11),
+    url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1800&q=85") center 55%/cover;
+}
+.arch:after{
+  content:"";position:absolute;inset:12px;
+  border:1px solid #d0b779aa;
+  border-radius:48% 48% 3px 3px / 35% 35% 3px 3px;
+}
+.hero-actions{
+  display:flex;justify-content:center;gap:14px;
+  margin-top:30px;flex-wrap:wrap;
+}
+.btn{
+  padding:15px 27px;
+  background:var(--burgundy);color:white;
+  font-size:11px;letter-spacing:1px;
+  border:1px solid var(--burgundy);
+}
+.btn-outline{
+  background:transparent;color:var(--burgundy);
+}
+.section{padding:90px 7%}
+.section-head{text-align:center;margin-bottom:45px}
+.section-head h2{
+  font-family:"Cormorant Garamond",serif;
+  color:var(--burgundy);font-size:48px;font-weight:500;
+  margin:12px 0;
+}
+.section-head p{color:var(--muted);font-size:13px}
+.categories{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+.category{
+  position:relative;min-height:290px;
+  overflow:hidden;background:#ddd;
+  border:1px solid #a98a5155;
+}
+.category img{
+  width:100%;height:290px;object-fit:cover;
+  display:block;transition:transform .6s;
+}
+.category:hover img{transform:scale(1.06)}
+.category:after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(0deg,#20110dd9,transparent 70%);
+}
+.cat-title{
+  position:absolute;bottom:23px;left:22px;z-index:2;
+  color:white;font-family:"Cormorant Garamond",serif;
+  font-size:29px;
+}
+.about{
+  background:var(--paper);
+  border-top:1px solid #a98a5133;
+  border-bottom:1px solid #a98a5133;
+}
+.about-inner{
+  max-width:850px;margin:auto;text-align:center;
+}
+.about-inner p{
+  line-height:2.2;color:var(--muted);
+  font-size:15px;margin-top:20px;
+}
+.skills{
+  display:flex;justify-content:center;gap:12px;
+  flex-wrap:wrap;margin-top:28px;
+}
+.skill{
+  border:1px solid #a98a5166;
+  padding:10px 17px;color:var(--burgundy);
+  font-size:11px;
+}
+.contact{text-align:center}
+.contact-info{
+  display:flex;justify-content:center;
+  gap:15px;flex-wrap:wrap;margin-top:30px;
+}
+.contact-info a{
+  border:1px solid #a98a5170;
+  padding:14px 20px;color:var(--burgundy);
+  font-size:12px;
+}
+footer{
+  background:var(--burgundy);color:var(--cream);
+  padding:35px 7%;text-align:center;
+}
+footer p{font-size:11px;opacity:.8;line-height:2}
+footer .logo{color:#e5cc98;margin-bottom:12px}
+@media(max-width:700px){
+  nav{padding:0 5%;height:70px}
+  .navlinks{gap:12px}
+  .navlinks a{font-size:10px}
+  .logo{font-size:21px}
+  .hero{padding:45px 5%}
+  .arch{height:330px}
+  .categories{grid-template-columns:1fr 1fr;gap:10px}
+  .category,.category img{min-height:210px;height:210px}
+  .cat-title{font-size:21px;left:12px;bottom:15px}
+  .section{padding:65px 5%}
+  .section-head h2{font-size:39px}
+}
+@media(max-width:400px){
+  .navlinks{gap:7px}
+  .navlinks a{font-size:9px}
+  .categories{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="#" class="logo">MOSTAFA REIAD</a>
+  <div class="navlinks">
+    <a href="#work" data-en="WORK" data-ar="أعمالي">WORK</a>
+    <a href="#about" data-en="ABOUT" data-ar="عني">ABOUT</a>
+    <a href="#contact" data-en="CONTACT" data-ar="تواصل">CONTACT</a>
+    <button class="lang" onclick="toggleLanguage()">عربي</button>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="eyebrow" data-en="PHOTOGRAPHER & VISUAL STORYTELLER" data-ar="مصور وصانع قصص بصرية">
+    PHOTOGRAPHER & VISUAL STORYTELLER
+  </div>
+
+  <h1>Mostafa Reiad</h1>
+
+  <p data-en="I'm Mostafa Reiad. Since 2019, I've been capturing stories through photography and cinematic visuals, combining creativity, technical skills, and attention to detail to bring every frame to life."
+     data-ar="أنا مصطفى رياض. منذ عام 2019، وأنا أوثّق القصص من خلال التصوير الفوتوغرافي واللقطات السينمائية، وأجمع بين الإبداع والمهارات التقنية والاهتمام بالتفاصيل لإضفاء الحياة على كل لقطة.">
+    I'm Mostafa Reiad. Since 2019, I've been capturing stories through photography and cinematic visuals, combining creativity, technical skills, and attention to detail to bring every frame to life.
+  </p>
+
+  <div class="arch"></div>
+
+  <div class="hero-actions">
+    <a href="#work" class="btn" data-en="EXPLORE MY WORK" data-ar="اكتشف أعمالي">EXPLORE MY WORK</a>
+    <a href="#contact" class="btn btn-outline" data-en="GET IN TOUCH" data-ar="تواصل معي">GET IN TOUCH</a>
+  </div>
+</header>
+
+<section class="section" id="work">
+  <div class="section-head">
+    <div class="eyebrow" data-en="A COLLECTION OF STORIES" data-ar="مجموعة من القصص البصرية">A COLLECTION OF STORIES</div>
+    <h2 data-en="Selected Works" data-ar="مختارات من أعمالي">Selected Works</h2>
+    <p data-en="Explore my photography and visual projects." data-ar="اكتشف أعمالي في التصوير والمحتوى البصري.">Explore my photography and visual projects.</p>
+  </div>
+
+  <div class="categories">
+    <a class="category" href="#contact">
+      <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=900&q=80" alt="Automotive">
+      <span class="cat-title">Automotive</span>
+    </a>
+    <a class="category" href="#contact">
+      <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=900&q=80" alt="Car Care">
+      <span class="cat-title">PPF & Car Care</span>
+    </a>
+    <a class="category" href="#contact">
+      <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80" alt="Weddings">
+      <span class="cat-title">Weddings</span>
+    </a>
+    <a class="category" href="#contact">
+      <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80" alt="Restaurants">
+      <span class="cat-title">Restaurants & Cafes</span>
+    </a>
+    <a class="category" href="#contact">
+      <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=900&q=80" alt="Retail">
+      <span class="cat-title">Commercial & Retail</span>
+    </a>
+    <a class="category" href="#contact">
+      <img src="https://images.unsplash.com/photo-1505236858219-8359eb29e329?auto=format&fit=crop&w=900&q=80" alt="Events">
+      <span class="cat-title">Events</span>
+    </a>
+  </div>
+</section>
+
+<section class="section about" id="about">
+  <div class="about-inner">
+    <div class="eyebrow" data-en="THE STORY BEHIND THE LENS" data-ar="القصة خلف العدسة">THE STORY BEHIND THE LENS</div>
+    <div class="section-head">
+      <h2 data-en="About Me" data-ar="من أنا">About Me</h2>
+    </div>
+    <p data-en="My journey in photography began in 2019. I believe every frame has a story worth telling. Through photography, videography and editing, I focus on capturing details and creating meaningful visual experiences."
+       data-ar="بدأت رحلتي في التصوير عام 2019. أؤمن أن كل لقطة تحمل قصة تستحق أن تُروى. من خلال التصوير الفوتوغرافي وتصوير الفيديو والمونتاج، أركز على التفاصيل وصناعة تجارب بصرية لها معنى.">
+      My journey in photography began in 2019. I believe every frame has a story worth telling.
+    </p>
+    <div class="skills">
+      <span class="skill">Photography</span>
+      <span class="skill">Videography</span>
+      <span class="skill">Video Editing</span>
+      <span class="skill">Visual Storytelling</span>
+      <span class="skill">Creative Direction</span>
+    </div>
+  </div>
+</section>
+
+<section class="section contact" id="contact">
+  <div class="eyebrow" data-en="LET'S CREATE SOMETHING" data-ar="لنصنع شيئاً مميزاً">LET'S CREATE SOMETHING</div>
+  <div class="section-head">
+    <h2 data-en="Get In Touch" data-ar="تواصل معي">Get In Touch</h2>
+    <p data-en="Have a project in mind? Let's talk." data-ar="لديك مشروع؟ يسعدني التواصل معك.">Have a project in mind? Let's talk.</p>
+  </div>
+  <div class="contact-info">
+    <a href="https://wa.me/201156828898">WhatsApp</a>
+    <a href="tel:+201156828898">Phone</a>
+    <a href="mailto:mostafaavva2001@gmail.com">Email</a>
+    <a href="https://www.instagram.com/mostafa.reiad.ph" target="_blank">Instagram</a>
+    <a href="https://www.facebook.com/share/1CCG7GXLhr/" target="_blank">Facebook</a>
+    <a href="https://www.tiktok.com/@mostafa.reiad" target="_blank">TikTok</a>
+  </div>
+</section>
+
+<footer>
+  <div class="logo">MOSTAFA REIAD</div>
+  <p>Photographer & Visual Storyteller</p>
+  <p>© 2026 Mostafa Reiad. All Rights Reserved.</p>
+</footer>
+
+<script>
+let currentLanguage = "en";
+
+function toggleLanguage(){
+  currentLanguage = currentLanguage === "en" ? "ar" : "en";
+  document.documentElement.lang = currentLanguage;
+  document.documentElement.dir = currentLanguage === "ar" ? "rtl" : "ltr";
+  document.querySelector(".lang").textContent =
+    currentLanguage === "ar" ? "English" : "عربي";
+
+  document.querySelectorAll("[data-en]").forEach(element => {
+    element.textContent = element.dataset[currentLanguage];
+  });
+}
+</script>
+
+</body>
+</html>
