@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -92,7 +91,7 @@ footer{background:var(--burgundy);color:var(--cream);padding:35px 7%;text-align:
 footer p{font-size:11px;opacity:.8;line-height:2}
 footer .logo{color:#e5cc98;margin-bottom:12px}
 
-/* WORKS GALLERY PAGE */
+/* WORKS GALLERY */
 .category{display:block;width:100%;padding:0;text-align:start;color:inherit;font:inherit;cursor:pointer}
 [hidden]{display:none!important}
 .gpage{position:fixed;inset:0;z-index:100;background:var(--cream);overflow:auto}
@@ -104,17 +103,15 @@ html[dir="rtl"] .back{letter-spacing:0}
 .hero-mini{min-height:62vh}
 .hero-mini .copy h1{font-size:clamp(2.4rem,5.5vw,4.6rem);max-width:14ch}
 .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;max-width:1200px;margin:0 auto}
-.gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border:1px solid #a98a5155}
+.gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border:1px solid #a98a5155;cursor:zoom-in}
 .gallery .video{aspect-ratio:16/9;border:1px solid #a98a5155;background:#000}
 .gallery iframe{width:100%;height:100%;border:0;display:block}
 
 /* IMAGE ZOOM */
-.gallery img{cursor:zoom-in}
 .lightbox{position:fixed;inset:0;z-index:300;background:rgba(10,7,6,.94);display:none;align-items:center;justify-content:center;padding:24px;overflow:auto}
 .lightbox.open{display:flex}
 .lightbox img{display:block;width:auto;height:auto;max-width:96vw;max-height:92vh;object-fit:contain;box-shadow:0 12px 50px rgba(0,0,0,.45)}
 .lightbox-close{position:fixed;top:18px;right:22px;z-index:2;width:44px;height:44px;border:1px solid #fff8;background:#1b1412;color:#fff;font-size:30px;line-height:1;cursor:pointer}
-
 .gallery-empty{grid-column:1/-1;text-align:center;color:var(--muted);font-size:14px;line-height:2;padding:30px 0}
 .gfoot{text-align:center;padding:10px 7% 70px}
 .gfoot .cta{background:var(--burgundy);color:var(--cream);border-color:var(--burgundy)}
@@ -188,7 +185,6 @@ html[dir="rtl"] .back{letter-spacing:0}
   <div class="shade"></div>
   <div class="me"><img src="صوره 1.jpg" alt="Mostafa Reiad"></div>
 
-  <!-- تم إصلاح أسماء الكلاسات هنا -->
   <div class="copy">
     <div class="copy-head">
       <h1 data-en="MOSTAFA REIAD" data-ar="مصطفى رياض">MOSTAFA REIAD</h1>
@@ -331,18 +327,13 @@ function toggleLanguage(){
   });
 }
 
-/* ====== WORKS: add your photos / YouTube videos here ======
-   images: file paths, e.g. "images/wedding-1.jpg"
-   videos: YouTube video IDs, e.g. "dQw4w9WgXcQ"        */
-
+/* ====== WORKS ====== */
 const works = {
   automotive: { images: [], videos: [] },
   ppf: { images: [], videos: [] },
 
   weddings: {
     images: [
-      "images/couple.jpg",
-      "images/bride.jpg",
       "IMG_9497.jpg",
       "IMG_9507.jpg",
       "IMG_9509.jpg",
@@ -364,7 +355,7 @@ const works = {
       "SaveInta.com_650203865_18111723346675152_9216118423218681112_n.jpg",
       "SaveInta.com_650714033_18114575980635040_6096198116163240455_n.jpg",
       "SaveInta.com_650825439_17975714802004146_7760697521499148377_n.jpg",
-      "SaveInta.com_651920303_18105483958675451_1666426003004243905_n.jpg",
+      "SaveInta.com_651920303_18105483958675451_166642600424390_",
       "SaveInta.com_651933029_18098167861768282_8605525509592584020_n.jpg",
       "SaveInta.com_652586824_17959115768923057_9029243220065128764_n.jpg",
       "SaveInta.com_652867265_18073278827182439_603236803773870324_n.jpg",
@@ -397,7 +388,7 @@ const gHero = document.getElementById("gHero");
 const gTitle = document.getElementById("gTitle");
 const gBody = document.getElementById("gBody");
 
-/* Reuse the homepage hero (collage + portrait) at the top of every gallery */
+/* Reuse homepage hero */
 (function(){
   const src = document.querySelector("header.hero");
   gHero.prepend(src.querySelector(".me").cloneNode(true));
@@ -415,9 +406,20 @@ function openGallery(cat){
   gTitle.dataset.en = t.dataset.en;
   gTitle.dataset.ar = t.dataset.ar;
   gTitle.textContent = t.dataset[currentLanguage];
+
   gBody.replaceChildren();
 
-  /* YouTube videos */
+  /* PHOTOS FIRST */
+  data.images.forEach(src => {
+    const img = document.createElement("img");
+    img.src = src;
+    img.alt = t.dataset.en;
+    img.loading = "lazy";
+    img.addEventListener("click", () => openLightbox(src, img.alt));
+    gBody.appendChild(img);
+  });
+
+  /* YOUTUBE VIDEOS AFTER PHOTOS */
   data.videos.forEach(id => {
     const box = document.createElement("div");
     box.className = "video";
@@ -431,16 +433,6 @@ function openGallery(cat){
 
     box.appendChild(frame);
     gBody.appendChild(box);
-  });
-
-  /* Gallery photos */
-  data.images.forEach(src => {
-    const img = document.createElement("img");
-    img.src = src;
-    img.alt = t.dataset.en;
-    img.loading = "lazy";
-    img.addEventListener("click", () => openLightbox(src, img.alt));
-    gBody.appendChild(img);
   });
 
   if (!data.images.length && !data.videos.length){
@@ -492,9 +484,7 @@ document.addEventListener("keydown", e => {
   if (e.key === "Escape" && gpage.style.display === "block") closeGallery();
 });
 
-route();
-
-/* IMAGE ZOOM FUNCTIONS */
+/* IMAGE ZOOM */
 const lightbox = document.getElementById("lightbox");
 const lightboxImage = document.getElementById("lightboxImage");
 const lightboxClose = document.getElementById("lightboxClose");
@@ -527,6 +517,8 @@ document.addEventListener("keydown", event => {
     closeLightbox();
   }
 });
+
+route();
 </script>
 
 </body>
