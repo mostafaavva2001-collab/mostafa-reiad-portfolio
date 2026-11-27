@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -186,8 +187,10 @@ html[dir="rtl"] .back{letter-spacing:0}
   </div>
   <div class="shade"></div>
   <div class="me"><img src="صوره 1.jpg" alt="Mostafa Reiad"></div>
-  <div class="490726122_1226294156172043_1904172129691635103_n.jpg">
-    <div class="صوره 1.jpg">
+
+  <!-- تم إصلاح أسماء الكلاسات هنا -->
+  <div class="copy">
+    <div class="copy-head">
       <h1 data-en="MOSTAFA REIAD" data-ar="مصطفى رياض">MOSTAFA REIAD</h1>
       <div class="role" data-en="PHOTOGRAPHER & VIDEOGRAPHER" data-ar="مصور فوتوغرافي ومصور فيديو">PHOTOGRAPHER & VIDEOGRAPHER</div>
     </div>
@@ -331,13 +334,62 @@ function toggleLanguage(){
 /* ====== WORKS: add your photos / YouTube videos here ======
    images: file paths, e.g. "images/wedding-1.jpg"
    videos: YouTube video IDs, e.g. "dQw4w9WgXcQ"        */
+
 const works = {
-  automotive:  { images: [], videos: [] },
-  ppf:         { images: [], videos: [] },
-  weddings: { images: ["images/couple.jpg","images/bride.jpg","IMG_9497.jpg","IMG_9507.jpg","IMG_9509.jpg","IMG_9514.jpg","IMG_9516.jpg","IMG_9536.jpg","IMG_9563.jpg","SaveInta.com_618385396_18075472439075642_1783092067831604415_n.jpg","SaveInta.com_619516906_18104755624755378_5962669788641618215_n.jpg","SaveInta.com_620873495_18113175637618417_5316106141585385550_n.jpg","SaveInta.com_621007984_18107714881708680_3270943002596910948_n.jpg","SaveInta.com_621726189_18081204379984596_5463985749995702361_n.jpg","SaveInta.com_626178006_18337142263241618_7716899253453346321_n.jpg","SaveInta.com_628989055_18377518012092830_8863271741514186310_n.jpg","SaveInta.com_642972609_18072578450194583_7841773093546192002_n.jpg","SaveInta.com_646053623_18070446608235779_4305059214891225887_n.jpg","SaveInta.com_649674287_18076417646401442_6698383359090189828_n.jpg","SaveInta.com_649849133_18120544519611871_2928744171698495626_n.jpg","SaveInta.com_650203865_18111723346675152_9216118423218681112_n.jpg","SaveInta.com_650714033_18114575980635040_6096198116163240455_n.jpg","SaveInta.com_650825439_17975714802004146_7760697521499148377_n.jpg","SaveInta.com_651920303_18105483958675451_1666426003004243905_n.jpg","SaveInta.com_651933029_18098167861768282_8605525509592584020_n.jpg","SaveInta.com_652586824_17959115768923057_9029243220065128764_n.jpg","SaveInta.com_652867265_18073278827182439_603236803773870324_n.jpg","SaveInta.com_653897075_18094199402118996_7385016036381744191_n.jpg","SaveInta.com_655360327_17998553366744965_1809511011807380226_n.jpg","SaveInta.com_655961466_18035926652586931_8067472809489175394_n.jpg","SaveInta.com_656006956_18061606490447701_1132001958834130038_n.jpg","SaveInta.com_659638720_18097788064987265_3802986022932957023_n.jpg","SaveInta.com_660428078_18400803928148384_4552954520748063552_n.jpg","SaveInta.com_763805524_18434532556131314_6154897040455982495_n.jpg","SaveInta.com_765602349_18434527444131314_7049999782599568382_n.jpg","SaveInta.com_765854916_18434532565131314_5143302967880520611_n.jpg","SaveInta.com_766494188_18434527435131314_608129330559683177_n.jpg","SaveInta.com_768787285_18434527426131314_435830924718911174_n.jpg"], videos: ["QstLgtt2RS8"] },
-  restaurants: { images: ["images/food.jpg","images/burger.jpg"], videos: [] },
-  commercial:  { images: [], videos: [] },
-  events:      { images: [], videos: [] }
+  automotive: { images: [], videos: [] },
+  ppf: { images: [], videos: [] },
+
+  weddings: {
+    images: [
+      "images/couple.jpg",
+      "images/bride.jpg",
+      "IMG_9497.jpg",
+      "IMG_9507.jpg",
+      "IMG_9509.jpg",
+      "IMG_9514.jpg",
+      "IMG_9516.jpg",
+      "IMG_9536.jpg",
+      "IMG_9563.jpg",
+      "SaveInta.com_618385396_18075472439075642_1783092067831604415_n.jpg",
+      "SaveInta.com_619516906_18104755624755378_5962669788641618215_n.jpg",
+      "SaveInta.com_620873495_18113175637618417_5316106141585385550_n.jpg",
+      "SaveInta.com_621007984_18107714881708680_3270943002596910948_n.jpg",
+      "SaveInta.com_621726189_18081204379984596_5463985749995702361_n.jpg",
+      "SaveInta.com_626178006_18337142263241618_7716899253453346321_n.jpg",
+      "SaveInta.com_628989055_18377518012092830_8863271741514186310_n.jpg",
+      "SaveInta.com_642972609_18072578450194583_7841773093546192002_n.jpg",
+      "SaveInta.com_646053623_18070446608235779_4305059214891225887_n.jpg",
+      "SaveInta.com_649674287_18076417646401442_6698383359090189828_n.jpg",
+      "SaveInta.com_649849133_18120544519611871_2928744171698495626_n.jpg",
+      "SaveInta.com_650203865_18111723346675152_9216118423218681112_n.jpg",
+      "SaveInta.com_650714033_18114575980635040_6096198116163240455_n.jpg",
+      "SaveInta.com_650825439_17975714802004146_7760697521499148377_n.jpg",
+      "SaveInta.com_651920303_18105483958675451_1666426003004243905_n.jpg",
+      "SaveInta.com_651933029_18098167861768282_8605525509592584020_n.jpg",
+      "SaveInta.com_652586824_17959115768923057_9029243220065128764_n.jpg",
+      "SaveInta.com_652867265_18073278827182439_603236803773870324_n.jpg",
+      "SaveInta.com_653897075_18094199402118996_7385016036381744191_n.jpg",
+      "SaveInta.com_655360327_17998553366744965_1809511011807380226_n.jpg",
+      "SaveInta.com_655961466_18035926652586931_8067472809489175394_n.jpg",
+      "SaveInta.com_656006956_18061606490447701_1132001958834130038_n.jpg",
+      "SaveInta.com_659638720_18097788064987265_3802986022932957023_n.jpg",
+      "SaveInta.com_660428078_18400803928148384_4552954520748063552_n.jpg",
+      "SaveInta.com_763805524_18434532556131314_6154897040455982495_n.jpg",
+      "SaveInta.com_765602349_18434527444131314_7049999782599568382_n.jpg",
+      "SaveInta.com_765854916_18434532565131314_5143302967880520611_n.jpg",
+      "SaveInta.com_766494188_18434527435131314_608129330559683177_n.jpg",
+      "SaveInta.com_768787285_18434527426131314_435830924718911174_n.jpg"
+    ],
+    videos: ["QstLgtt2RS8"]
+  },
+
+  restaurants: {
+    images: ["images/food.jpg", "images/burger.jpg"],
+    videos: []
+  },
+
+  commercial: { images: [], videos: [] },
+  events: { images: [], videos: [] }
 };
 
 const gpage = document.getElementById("gpage");
@@ -345,7 +397,7 @@ const gHero = document.getElementById("gHero");
 const gTitle = document.getElementById("gTitle");
 const gBody = document.getElementById("gBody");
 
-/* reuse the homepage hero (collage + portrait) at the top of every gallery */
+/* Reuse the homepage hero (collage + portrait) at the top of every gallery */
 (function(){
   const src = document.querySelector("header.hero");
   gHero.prepend(src.querySelector(".me").cloneNode(true));
@@ -356,6 +408,7 @@ const gBody = document.getElementById("gBody");
 function openGallery(cat){
   const card = document.querySelector('[data-cat="' + cat + '"]');
   if (!card) return;
+
   const data = works[cat] || { images: [], videos: [] };
   const t = card.querySelector(".cat-title");
 
@@ -364,18 +417,23 @@ function openGallery(cat){
   gTitle.textContent = t.dataset[currentLanguage];
   gBody.replaceChildren();
 
+  /* YouTube videos */
   data.videos.forEach(id => {
     const box = document.createElement("div");
     box.className = "video";
+
     const frame = document.createElement("iframe");
     frame.src = "https://www.youtube-nocookie.com/embed/" + id;
     frame.loading = "lazy";
+    frame.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
     frame.allowFullscreen = true;
     frame.title = t.dataset.en;
+
     box.appendChild(frame);
     gBody.appendChild(box);
   });
 
+  /* Gallery photos */
   data.images.forEach(src => {
     const img = document.createElement("img");
     img.src = src;
@@ -413,8 +471,11 @@ function closeGallery(target){
 }
 
 function route(){
-  if (location.hash.startsWith("#gallery-")) openGallery(location.hash.slice(9));
-  else hideGallery();
+  if (location.hash.startsWith("#gallery-")) {
+    openGallery(location.hash.slice(9));
+  } else {
+    hideGallery();
+  }
 }
 
 document.querySelectorAll(".category").forEach(card => {
@@ -426,9 +487,11 @@ document.querySelectorAll(".category").forEach(card => {
 });
 
 window.addEventListener("popstate", route);
+
 document.addEventListener("keydown", e => {
   if (e.key === "Escape" && gpage.style.display === "block") closeGallery();
 });
+
 route();
 
 /* IMAGE ZOOM FUNCTIONS */
@@ -460,7 +523,9 @@ lightbox.addEventListener("click", event => {
 lightboxImage.addEventListener("click", event => event.stopPropagation());
 
 document.addEventListener("keydown", event => {
-  if (event.key === "Escape" && lightbox.classList.contains("open")) closeLightbox();
+  if (event.key === "Escape" && lightbox.classList.contains("open")) {
+    closeLightbox();
+  }
 });
 </script>
 
